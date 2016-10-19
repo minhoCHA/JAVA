@@ -2,10 +2,8 @@
 /*
  * MagazineList.java
  * Represents a collection of magazines.
- *@author Lewis/Loftus
- *@modifer Ha Yee Chan, Minho Cha
- *@version 1.0
- *@since 2016-05-16
+ * Minho Cha
+ * Date 2016-05-16
  */
 
 public class MagazineList
