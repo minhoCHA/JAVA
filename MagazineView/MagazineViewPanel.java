@@ -2,18 +2,13 @@
 /*
  * MagazineViewPanel.java
  * Driver to exercise the MagazineList collection.
- *@author Lewis/Loftus
- *@modifer Ha Yee Chan, Minho Cha
- *@version 1.0
- *@since 2016-05-16
  */
 
 import javax.swing.JPanel;
 import java.awt.*;
 import java.awt.event.*;
 
-public class MagazineViewPanel extends JPanel
-{
+public class MagazineViewPanel extends JPanel{
 	private String text;
 	private TextField AddMag, DelMag;
 	private TextArea ListMag;
@@ -23,13 +18,10 @@ public class MagazineViewPanel extends JPanel
 
    //  Creates a MagazineList object, adds magazines to the
    //  list, then prints it.
-
     MagazineList rack = new MagazineList();
 
    //  Constructor: Sets up this panel for action events.
-
-   public MagazineViewPanel()
-   {
+   public MagazineViewPanel(){
       setLayout(new BorderLayout());
 
       AddMag = new TextField(20);
@@ -65,13 +57,9 @@ public class MagazineViewPanel extends JPanel
    }
 
    //Represents listeners for action events
-
-   private class AddMagHandler implements ActionListener
-   {
-	   public void actionPerformed(ActionEvent event)
-	   {
-		   if(!AddMag.getText().equals(""))
-		   {
+   private class AddMagHandler implements ActionListener{
+	   public void actionPerformed(ActionEvent event){
+		   if(!AddMag.getText().equals("")){
 			   text = AddMag.getText();
 			   rack.insert(new Magazine(text));
 			   AddMag.setText("");
@@ -81,34 +69,27 @@ public class MagazineViewPanel extends JPanel
 	    }
     }
 
-    private class DelMagHandler implements ActionListener
-    {
-		public void actionPerformed(ActionEvent event)
-		{
+    private class DelMagHandler implements ActionListener{
+		public void actionPerformed(ActionEvent event){
 			text = DelMag.getText();
 			rack.delete(new Magazine(text));
 			DelMag.setText("");
 			ListMag.setText(" ");
 			ListMag.insert(rack.toString(), 0);
-	    }
+	        }
     }
 
-    private class ListAllHandler implements ActionListener
-    {
-		public void actionPerformed(ActionEvent event)
-		{
+    private class ListAllHandler implements ActionListener{
+		public void actionPerformed(ActionEvent event){
 			ListMag.setText(" ");
 			ListMag.insert(rack.toString(), 0);
-	     }
+	        }
     }
 
-    private class DelAllHandler implements ActionListener
-    {
-		public void actionPerformed(ActionEvent event)
-		{
+    private class DelAllHandler implements ActionListener{
+		public void actionPerformed(ActionEvent event){
 			rack.DelAll();
 			ListMag.setText(" ");
-	     }
+	        }
      }
-
 }
